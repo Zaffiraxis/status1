@@ -28,14 +28,38 @@ requestAnimationFrame(() => requestAnimationFrame(() => {
   setTimeout(() => document.querySelectorAll('.reveal-up').forEach((el) => el.classList.add('in')), 3000);
 }));
 
-// Subtle hero parallax on the tooth watermark
-const wm = document.querySelector('.hero-watermark');
-if (wm && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y < 900) wm.style.transform = `translateY(${y * 0.12}px) rotate(-4deg)`;
-  }, { passive: true });
-}
+// About gallery — fade slider with prev/next + dots
+(() => {
+  const gallery = document.getElementById('about-gallery');
+  if (!gallery) return;
+  const slides = Array.from(gallery.querySelectorAll('.about-slide'));
+  const dots = Array.from(document.querySelectorAll('#about-dots button'));
+  let i = 0, timer;
+  function show(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, idx) => s.classList.toggle('is-active', idx === i));
+    dots.forEach((d, idx) => d.classList.toggle('is-active', idx === i));
+  }
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(() => show(i + 1), 5000);
+  }
+  document.getElementById('about-prev').addEventListener('click', () => { show(i - 1); restart(); });
+  document.getElementById('about-next').addEventListener('click', () => { show(i + 1); restart(); });
+  dots.forEach((d, idx) => d.addEventListener('click', () => { show(idx); restart(); }));
+  restart();
+})();
+
+// Certificates carousel — scroll by one card width per click
+(() => {
+  const track = document.getElementById('cert-track');
+  const prev = document.getElementById('cert-prev');
+  const next = document.getElementById('cert-next');
+  if (!track || !prev || !next) return;
+  const step = () => (track.querySelector('.cert-card')?.offsetWidth || 220) + 20;
+  prev.addEventListener('click', () => track.scrollBy({ left: -step() * 2, behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: step() * 2, behavior: 'smooth' }));
+})();
 
 // Mobile menu
 const burger = document.getElementById('nav-burger');
@@ -51,10 +75,10 @@ mobile.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
   burger.setAttribute('aria-expanded', 'false');
 }));
 
-// Appointment form
+// Appointment form (only present on index.html)
 const form = document.getElementById('appt-form');
 const note = document.getElementById('form-note');
-form.addEventListener('submit', (e) => {
+if (form) form.addEventListener('submit', (e) => {
   e.preventDefault();
   const name = form.name.value.trim();
   const phone = form.phone.value.trim();

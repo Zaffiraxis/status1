@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>STATUS — Центр сучасної стоматології · Запоріжжя</title>
+<meta name="description" content="STATUS — центр сучасної стоматології повного циклу в Запоріжжі. Лікування без болю, досвідчена команда, прозорі ціни.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://res.cloudinary.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
-<script src="image-slot.js"></script>
 <link rel="stylesheet" href="status.css">
 </head>
 <body>
@@ -19,10 +20,11 @@
       <img src="status-logo.png" alt="STATUS — центр сучасної стоматології" class="brand-logo">
     </a>
     <nav class="nav-links" aria-label="Головна навігація">
+      <a href="#about">Про нас</a>
       <a href="#services">Послуги</a>
-      <a href="#about">Про клініку</a>
-      <a href="#team">Команда</a>
-      <a href="#reviews">Відгуки</a>
+      <a href="#cases">Кейси</a>
+      <a href="#certificates">Сертифікати</a>
+      <a href="price.html">Прайс</a>
       <a href="#contact">Контакти</a>
     </nav>
     <a href="#contact" class="btn btn-fill nav-cta">Записатися</a>
@@ -31,10 +33,11 @@
     </button>
   </div>
   <div class="nav-mobile" id="nav-mobile">
+    <a href="#about">Про нас</a>
     <a href="#services">Послуги</a>
-    <a href="#about">Про клініку</a>
-    <a href="#team">Команда</a>
-    <a href="#reviews">Відгуки</a>
+    <a href="#cases">Кейси</a>
+    <a href="#certificates">Сертифікати</a>
+    <a href="price.html">Прайс</a>
     <a href="#contact">Контакти</a>
     <a href="#contact" class="btn btn-fill">Записатися на прийом</a>
   </div>
@@ -44,11 +47,15 @@
 
 <!-- ================= HERO ================= -->
 <section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline
+      poster="https://res.cloudinary.com/djntd8got/video/upload/so_0,f_auto,q_auto,c_limit,w_1200/status/hero/hero-bg.jpg">
+      <source src="https://res.cloudinary.com/djntd8got/video/upload/f_auto,q_auto,c_limit,w_1200/status/hero/hero-bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
   <div class="grain" aria-hidden="true"></div>
-  <svg class="hero-watermark" viewBox="0 0 100 100" aria-hidden="true">
-    <path d="M50 12 C34 12 20 20 20 38 C20 52 24 64 30 82 C32 90 40 90 42 82 L46 60 C47 54 53 54 54 60 L58 82 C60 90 68 90 70 82 C76 64 80 52 80 38 C80 20 66 12 50 12 Z"/>
-  </svg>
-  <div class="wrap hero-grid">
+  <div class="wrap">
     <div class="hero-copy">
       <p class="eyebrow reveal-up" style="--d:0ms">Запоріжжя · вул. Поштова, 161/36</p>
       <h1 class="hero-title">
@@ -70,14 +77,6 @@
         <div class="stat"><span class="stat-num">8</span><span class="stat-lbl">напрямків лікування</span></div>
         <div class="stat-div" aria-hidden="true"></div>
         <div class="stat"><span class="stat-num">0</span><span class="stat-lbl">болю на процедурах</span></div>
-      </div>
-    </div>
-    <div class="hero-media reveal-up" style="--d:300ms">
-      <image-slot id="hero-photo" class="hero-photo" shape="rounded" radius="4"
-        placeholder="Фото клініки або усмішки пацієнта"></image-slot>
-      <div class="hero-badge">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 6.9H22l-6 4.4 2.3 7-6.3-4.5L5.7 20 8 13.3 2 8.9h7.6z" fill="currentColor"/></svg>
-        <span>Анестезія на<br>кожній процедурі</span>
       </div>
     </div>
   </div>
@@ -109,94 +108,32 @@
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
-<section class="section services" id="services">
-  <div class="wrap">
-    <div class="sec-head reveal-up">
-      <span class="sec-kicker">Послуги</span>
-      <h2 class="sec-title">Повний спектр стоматології<br>під одним дахом</h2>
-      <p class="sec-lede">Кожен напрямок ведуть профільні спеціалісти. Ви отримуєте
-        прозорий план лікування та результат, у якому впевнені.</p>
-    </div>
-    <div class="hr-teal reveal-up" aria-hidden="true"></div>
-    <div class="svc-grid">
-      <article class="svc-card svc-wide reveal-up" data-num="01">
-        <div class="svc-ico">
-          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4C9 4 6 8 6 13c0 5 2 9 4 14 1 2.6 4 2.6 5 0l1.5-6c.3-1.5 1.5-1.5 1.8 0l1.5 6c1 2.6 4 2.6 5 0 2-5 4-9 4-14 0-5-3-9-10-9-1 0-2 .4-3 1-1-.6-2-1-3-1z"/></svg>
-        </div>
-        <div class="svc-body">
-          <h3>Імплантація</h3>
-          <p>Відновлення втрачених зубів імплантами світових систем — надійна
-            основа на десятиліття, з точним цифровим плануванням.</p>
-          <span class="svc-link">Детальніше →</span>
-        </div>
-      </article>
-      <article class="svc-card reveal-up" data-num="02" style="--d:60ms">
-        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5C10 5 7 9 7 14c0 4.5 2 8 3.6 12 .9 2.2 3.4 2.2 4.2 0l1-4c.3-1.2 1.1-1.2 1.4 0l1 4c.8 2.2 3.3 2.2 4.2 0C25 22 27 18.5 27 14c0-5-3-9-9-9-.7 0-1.4.2-2 .5-.6-.3-1.3-.5-2-.5z"/><path d="M14 13l1.5 1.5L20 10" stroke-width="1.6" fill="none" stroke="currentColor"/></svg></div>
-        <div class="svc-body">
-          <h3>Гігієнічне чищення</h3>
-          <p>Професійна чистка та polishing — здорові ясна й сяюча усмішка.</p>
-          <span class="svc-link">Детальніше →</span>
-        </div>
-      </article>
-      <article class="svc-card reveal-up" data-num="03" style="--d:120ms">
-        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5C10 5 7 9 7 14c0 4.5 2 8 3.6 12 .9 2.2 3.4 2.2 4.2 0l1-4c.3-1.2 1.1-1.2 1.4 0l1 4c.8 2.2 3.3 2.2 4.2 0C25 22 27 18.5 27 14c0-5-3-9-9-9-.7 0-1.4.2-2 .5-.6-.3-1.3-.5-2-.5z"/></svg></div>
-        <div class="svc-body">
-          <h3>Лікування зубів і каналів</h3>
-          <p>Терапія карієсу, ясен та ендодонтія під мікроскопом — без болю.</p>
-          <span class="svc-link">Детальніше →</span>
-        </div>
-      </article>
-      <article class="svc-card reveal-up" data-num="04" style="--d:60ms">
-        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="6" width="16" height="20" rx="3"/><path d="M12 11h8M12 16h8M12 21h5" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></div>
-        <div class="svc-body">
-          <h3>Протезування</h3>
-          <p>Вініри, коронки та мости, що повертають естетику і функцію.</p>
-          <span class="svc-link">Детальніше →</span>
-        </div>
-      </article>
-      <article class="svc-card reveal-up" data-num="05" style="--d:120ms">
-        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 6C11 6 8 9 8 14c0 4 2 7 3.4 10.5.8 2 3 2 3.7 0l.9-3.5c.3-1 1-1 1.3 0l.9 3.5c.7 2 2.9 2 3.7 0C23 21 25 18 25 14c0-5-3-8-8-8z"/><path d="M21 7l1.5-2M24 10l2-1M23 14h2.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
-        <div class="svc-body">
-          <h3>Відбілювання</h3>
-          <p>Безпечне освітлення емалі до природного відтінку вашої усмішки.</p>
-          <span class="svc-link">Детальніше →</span>
-        </div>
-      </article>
-      <article class="svc-card reveal-up" data-num="06" style="--d:180ms">
-        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12c4-2 7-2 10 0s6 2 10 0M6 18c4-2 7-2 10 0s6 2 10 0" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M9 12v6M16 13v6M23 12v6" stroke="currentColor" stroke-width="1.8"/></svg></div>
-        <div class="svc-body">
-          <h3>Виправлення прикусу</h3>
-          <p>Брекети та елайнери — рівні зуби й здоровий прикус у будь-якому віці.</p>
-          <span class="svc-link">Детальніше →</span>
-        </div>
-      </article>
-      <article class="svc-card reveal-up" data-num="07" style="--d:60ms">
-        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M20 5l7 7-13 13-7 1 1-7z"/><path d="M17 8l7 7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></div>
-        <div class="svc-body">
-          <h3>Хірургічне лікування</h3>
-          <p>Складні видалення та операції з акуратним, прогнозованим загоєнням.</p>
-          <span class="svc-link">Детальніше →</span>
-        </div>
-      </article>
-      <article class="svc-card reveal-up" data-num="08" style="--d:120ms">
-        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4l2.7 7.8L27 13l-6.6 5 2.4 8.2L16 21.8 9.2 26.2 11.6 18 5 13l8.3-1.2z"/></svg></div>
-        <div class="svc-body">
-          <h3>Естетична стоматологія</h3>
-          <p>Дизайн усмішки, у якому кожна деталь продумана під ваше обличчя.</p>
-          <span class="svc-link">Детальніше →</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
 <!-- ================= ABOUT ================= -->
 <section class="section about" id="about">
   <div class="wrap about-grid">
     <div class="about-media reveal-up">
-      <image-slot id="about-photo" class="about-photo" shape="rounded" radius="4"
-        placeholder="Інтер'єр клініки STATUS"></image-slot>
+      <div class="about-gallery" id="about-gallery">
+        <div class="about-slide is-active">
+          <img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_900/status/about/about-1.jpg" alt="Лікарі STATUS під час прийому пацієнта" loading="lazy">
+        </div>
+        <div class="about-slide">
+          <img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_900/status/about/about-2.jpg" alt="Кабінет клініки STATUS під час лікування" loading="lazy">
+        </div>
+        <div class="about-slide">
+          <img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_900/status/about/about-3.jpg" alt="Стіна сертифікатів та дипломів лікарів STATUS" loading="lazy">
+        </div>
+      </div>
+      <button class="gallery-nav prev" id="about-prev" aria-label="Попереднє фото">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="gallery-nav next" id="about-next" aria-label="Наступне фото">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="gallery-dots" id="about-dots">
+        <button class="is-active" aria-label="Фото 1"></button>
+        <button aria-label="Фото 2"></button>
+        <button aria-label="Фото 3"></button>
+      </div>
       <div class="about-accent" aria-hidden="true"></div>
     </div>
     <div class="about-copy reveal-up" style="--d:120ms">
@@ -216,6 +153,187 @@
   </div>
 </section>
 
+<!-- ================= SERVICES ================= -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="sec-head center reveal-up">
+      <span class="sec-kicker">Послуги</span>
+      <h2 class="sec-title">Комплексна турбота<br>про вашу усмішку</h2>
+      <p class="sec-lede">Кожен напрямок ведуть профільні спеціалісти. Оберіть категорію,
+        щоб переглянути повний прайс і конкретні ціни.</p>
+    </div>
+    <div class="hr-teal reveal-up" aria-hidden="true"></div>
+    <div class="svc-grid">
+      <article class="svc-card reveal-up" data-num="01">
+        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5C10 5 7 9 7 14c0 4.5 2 8 3.6 12 .9 2.2 3.4 2.2 4.2 0l1-4c.3-1.2 1.1-1.2 1.4 0l1 4c.8 2.2 3.3 2.2 4.2 0C25 22 27 18.5 27 14c0-5-3-9-9-9-.7 0-1.4.2-2 .5-.6-.3-1.3-.5-2-.5z"/><path d="M14 13l1.5 1.5L20 10" stroke-width="1.6" fill="none" stroke="currentColor"/></svg></div>
+        <div class="svc-body">
+          <h3>Профілактика</h3>
+          <p>Проф. гігієна з Air-flow, косметична гігієна та відбілювання зубів.</p>
+          <a href="price.html#profilaktyka" class="svc-link">Відкрити прайс →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal-up" data-num="02" style="--d:60ms">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.6 2.3 6 5.5 6 7.6 6 9 7.3 12 10c3-2.7 4.4-4 6.5-4 3.2 0 4.6 3.6 3 6.5C19 16.65 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></div>
+        <div class="svc-body">
+          <h3>Пародонтологія</h3>
+          <p>Vector-терапія та комплексне лікування ясен на будь-якій стадії.</p>
+          <a href="price.html#parodontologiya" class="svc-link">Відкрити прайс →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal-up" data-num="03" style="--d:120ms">
+        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5C10 5 7 9 7 14c0 4.5 2 8 3.6 12 .9 2.2 3.4 2.2 4.2 0l1-4c.3-1.2 1.1-1.2 1.4 0l1 4c.8 2.2 3.3 2.2 4.2 0C25 22 27 18.5 27 14c0-5-3-9-9-9-.7 0-1.4.2-2 .5-.6-.3-1.3-.5-2-.5z"/></svg></div>
+        <div class="svc-body">
+          <h3>Терапія</h3>
+          <p>Лікування карієсу, реставрація зубів та ендодонтія без болю.</p>
+          <a href="price.html#terapiya" class="svc-link">Відкрити прайс →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal-up" data-num="04" style="--d:60ms">
+        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12c4-2 7-2 10 0s6 2 10 0M6 18c4-2 7-2 10 0s6 2 10 0" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M9 12v6M16 13v6M23 12v6" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div class="svc-body">
+          <h3>Ортодонтія</h3>
+          <p>Брекет-системи та апарати для рівного прикусу в будь-якому віці.</p>
+          <a href="price.html#ortodontiya" class="svc-link">Відкрити прайс →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal-up" data-num="05" style="--d:120ms">
+        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="6" width="16" height="20" rx="3"/><path d="M12 11h8M12 16h8M12 21h5" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></div>
+        <div class="svc-body">
+          <h3>Ортопедія</h3>
+          <p>Коронки, цирконій та керамічні вініри для естетики й функції.</p>
+          <a href="price.html#ortopediya" class="svc-link">Відкрити прайс →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal-up" data-num="06" style="--d:180ms">
+        <div class="svc-ico"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M20 5l7 7-13 13-7 1 1-7z"/><path d="M17 8l7 7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></div>
+        <div class="svc-body">
+          <h3>Хірургія</h3>
+          <p>Видалення зубів та імплантація на сучасному обладнанні.</p>
+          <a href="price.html#hirurgiya" class="svc-link">Відкрити прайс →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CASES ================= -->
+<section class="section cases" id="cases">
+  <div class="wrap">
+    <div class="sec-head center reveal-up">
+      <span class="sec-kicker">Кейси</span>
+      <h2 class="sec-title">Результати, якими ми пишаємося</h2>
+      <p class="sec-lede">Реальні роботи наших лікарів. Фотографії кейсів оновлюються —
+        зараз тут місце під приклад результату.</p>
+    </div>
+    <div class="case-grid">
+      <article class="case-card case-wide reveal-up">
+        <div class="case-half">
+          <span class="case-tag">До</span>
+          <svg class="case-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 C34 12 20 20 20 38 C20 52 24 64 30 82 C32 90 40 90 42 82 L46 60 C47 54 53 54 54 60 L58 82 C60 90 68 90 70 82 C76 64 80 52 80 38 C80 20 66 12 50 12 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <div class="case-half">
+          <span class="case-tag">Після</span>
+          <svg class="case-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 C34 12 20 20 20 38 C20 52 24 64 30 82 C32 90 40 90 42 82 L46 60 C47 54 53 54 54 60 L58 82 C60 90 68 90 70 82 C76 64 80 52 80 38 C80 20 66 12 50 12 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <div class="case-chip">Вініри</div>
+      </article>
+      <article class="case-card reveal-up" style="--d:60ms">
+        <div class="case-half">
+          <span class="case-tag">До</span>
+          <svg class="case-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 C34 12 20 20 20 38 C20 52 24 64 30 82 C32 90 40 90 42 82 L46 60 C47 54 53 54 54 60 L58 82 C60 90 68 90 70 82 C76 64 80 52 80 38 C80 20 66 12 50 12 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <div class="case-half">
+          <span class="case-tag">Після</span>
+          <svg class="case-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 C34 12 20 20 20 38 C20 52 24 64 30 82 C32 90 40 90 42 82 L46 60 C47 54 53 54 54 60 L58 82 C60 90 68 90 70 82 C76 64 80 52 80 38 C80 20 66 12 50 12 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <div class="case-chip">Імплантація</div>
+      </article>
+      <article class="case-card reveal-up" style="--d:120ms">
+        <div class="case-half">
+          <span class="case-tag">До</span>
+          <svg class="case-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 C34 12 20 20 20 38 C20 52 24 64 30 82 C32 90 40 90 42 82 L46 60 C47 54 53 54 54 60 L58 82 C60 90 68 90 70 82 C76 64 80 52 80 38 C80 20 66 12 50 12 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <div class="case-half">
+          <span class="case-tag">Після</span>
+          <svg class="case-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 C34 12 20 20 20 38 C20 52 24 64 30 82 C32 90 40 90 42 82 L46 60 C47 54 53 54 54 60 L58 82 C60 90 68 90 70 82 C76 64 80 52 80 38 C80 20 66 12 50 12 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <div class="case-chip">Відбілювання</div>
+      </article>
+      <article class="case-card reveal-up" style="--d:180ms">
+        <div class="case-half">
+          <span class="case-tag">До</span>
+          <svg class="case-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 C34 12 20 20 20 38 C20 52 24 64 30 82 C32 90 40 90 42 82 L46 60 C47 54 53 54 54 60 L58 82 C60 90 68 90 70 82 C76 64 80 52 80 38 C80 20 66 12 50 12 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <div class="case-half">
+          <span class="case-tag">Після</span>
+          <svg class="case-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 12 C34 12 20 20 20 38 C20 52 24 64 30 82 C32 90 40 90 42 82 L46 60 C47 54 53 54 54 60 L58 82 C60 90 68 90 70 82 C76 64 80 52 80 38 C80 20 66 12 50 12 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <div class="case-chip">Ортодонтія</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATES ================= -->
+<section class="section certificates" id="certificates">
+  <div class="wrap">
+    <div class="sec-head center reveal-up">
+      <span class="sec-kicker">Кваліфікація</span>
+      <h2 class="sec-title">Сертифікати та дипломи лікарів</h2>
+      <p class="sec-lede">Наші лікарі регулярно підвищують кваліфікацію на профільних
+        курсах і конференціях в Україні та за кордоном.</p>
+    </div>
+    <div class="cert-wrap reveal-up">
+      <div class="cert-track" id="cert-track">
+        <!-- 37 certificates -->
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-01.jpg" alt="Сертифікат лікаря STATUS 1" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-02.jpg" alt="Сертифікат лікаря STATUS 2" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-03.jpg" alt="Сертифікат лікаря STATUS 3" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-04.jpg" alt="Сертифікат лікаря STATUS 4" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-05.jpg" alt="Сертифікат лікаря STATUS 5" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-06.jpg" alt="Сертифікат лікаря STATUS 6" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-07.jpg" alt="Сертифікат лікаря STATUS 7" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-08.jpg" alt="Сертифікат лікаря STATUS 8" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-09.jpg" alt="Сертифікат лікаря STATUS 9" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-10.jpg" alt="Сертифікат лікаря STATUS 10" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-11.jpg" alt="Сертифікат лікаря STATUS 11" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-12.jpg" alt="Сертифікат лікаря STATUS 12" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-13.jpg" alt="Сертифікат лікаря STATUS 13" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-14.jpg" alt="Сертифікат лікаря STATUS 14" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-15.jpg" alt="Сертифікат лікаря STATUS 15" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-16.jpg" alt="Сертифікат лікаря STATUS 16" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-17.jpg" alt="Сертифікат лікаря STATUS 17" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-18.jpg" alt="Сертифікат лікаря STATUS 18" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-19.jpg" alt="Сертифікат лікаря STATUS 19" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-20.jpg" alt="Сертифікат лікаря STATUS 20" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-21.jpg" alt="Сертифікат лікаря STATUS 21" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-22.jpg" alt="Сертифікат лікаря STATUS 22" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-23.jpg" alt="Сертифікат лікаря STATUS 23" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-24.jpg" alt="Сертифікат лікаря STATUS 24" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-25.jpg" alt="Сертифікат лікаря STATUS 25" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-26.jpg" alt="Сертифікат лікаря STATUS 26" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-27.jpg" alt="Сертифікат лікаря STATUS 27" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-28.jpg" alt="Сертифікат лікаря STATUS 28" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-29.jpg" alt="Сертифікат лікаря STATUS 29" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-30.jpg" alt="Сертифікат лікаря STATUS 30" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-31.jpg" alt="Сертифікат лікаря STATUS 31" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-32.jpg" alt="Сертифікат лікаря STATUS 32" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-33.jpg" alt="Сертифікат лікаря STATUS 33" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-34.jpg" alt="Сертифікат лікаря STATUS 34" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-35.jpg" alt="Сертифікат лікаря STATUS 35" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-36.jpg" alt="Сертифікат лікаря STATUS 36" loading="lazy"></div>
+        <div class="cert-card"><img src="https://res.cloudinary.com/djntd8got/image/upload/f_auto,q_auto,w_500/status/certificates/cert-37.jpg" alt="Сертифікат лікаря STATUS 37" loading="lazy"></div>
+      </div>
+      <button class="cert-nav prev" id="cert-prev" aria-label="Прокрутити назад">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="cert-nav next" id="cert-next" aria-label="Прокрутити вперед">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- ================= TEAM ================= -->
 <section class="section team" id="team">
   <div class="wrap">
@@ -226,28 +344,28 @@
     </div>
     <div class="team-grid">
       <figure class="doc reveal-up">
-        <div class="doc-ring"><image-slot id="doc-1" class="doc-photo" shape="circle" placeholder="Фото лікаря"></image-slot></div>
+        <div class="doc-ring"><div class="doc-avatar">ОК</div></div>
         <figcaption>
           <h3>Олена Ковальчук</h3>
           <p class="doc-role">Терапевт-ендодонтист</p>
         </figcaption>
       </figure>
       <figure class="doc reveal-up" style="--d:100ms">
-        <div class="doc-ring"><image-slot id="doc-2" class="doc-photo" shape="circle" placeholder="Фото лікаря"></image-slot></div>
+        <div class="doc-ring"><div class="doc-avatar">АМ</div></div>
         <figcaption>
           <h3>Андрій Мельник</h3>
           <p class="doc-role">Хірург-імплантолог</p>
         </figcaption>
       </figure>
       <figure class="doc reveal-up" style="--d:200ms">
-        <div class="doc-ring"><image-slot id="doc-3" class="doc-photo" shape="circle" placeholder="Фото лікаря"></image-slot></div>
+        <div class="doc-ring"><div class="doc-avatar">МЛ</div></div>
         <figcaption>
           <h3>Марія Левченко</h3>
           <p class="doc-role">Ортодонт</p>
         </figcaption>
       </figure>
       <figure class="doc reveal-up" style="--d:300ms">
-        <div class="doc-ring"><image-slot id="doc-4" class="doc-photo" shape="circle" placeholder="Фото лікаря"></image-slot></div>
+        <div class="doc-ring"><div class="doc-avatar">ІС</div></div>
         <figcaption>
           <h3>Ігор Савченко</h3>
           <p class="doc-role">Ортопед-протезист</p>
@@ -305,14 +423,12 @@
           <label for="f-service">Послуга</label>
           <select id="f-service" name="service">
             <option value="" disabled selected>Оберіть напрямок</option>
-            <option>Гігієнічне чищення</option>
-            <option>Лікування зубів і каналів</option>
-            <option>Імплантація</option>
-            <option>Протезування</option>
-            <option>Відбілювання</option>
-            <option>Виправлення прикусу</option>
-            <option>Хірургічне лікування</option>
-            <option>Естетична стоматологія</option>
+            <option>Профілактика</option>
+            <option>Пародонтологія</option>
+            <option>Терапія</option>
+            <option>Ортодонтія</option>
+            <option>Ортопедія</option>
+            <option>Хірургія</option>
             <option>Інша консультація</option>
           </select>
         </div>
@@ -342,9 +458,6 @@
         <h3>Instagram</h3>
         <p><a href="https://instagram.com/status_dent_zp" target="_blank" rel="noopener">@status_dent_zp</a></p>
       </div>
-      <div class="map" aria-label="Розташування клініки">
-        <iframe title="Карта" src="https://www.openstreetmap.org/export/embed.html?bbox=35.10%2C47.82%2C35.20%2C47.86&layer=mapnik&marker=47.84%2C35.15" loading="lazy"></iframe>
-      </div>
     </aside>
   </div>
 </section>
@@ -353,24 +466,36 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <div class="wrap footer-inner">
-    <a href="#top" class="brand brand-foot" aria-label="STATUS">
-      <span class="brand-logo-chip"><img src="status-logo.png" alt="STATUS — центр сучасної стоматології"></span>
-    </a>
+  <div class="wrap footer-top">
+    <div class="footer-brand">
+      <a href="#top" class="brand brand-foot" aria-label="STATUS">
+        <span class="brand-logo-chip"><img src="status-logo.png" alt="STATUS — центр сучасної стоматології"></span>
+      </a>
+      <p class="footer-tag">Центр сучасної стоматології повного циклу в Запоріжжі. Лікування без болю, прозорі ціни, команда, якій довіряють.</p>
+      <a href="#contact" class="btn btn-fill">Записатися на прийом</a>
+    </div>
     <nav class="footer-links" aria-label="Footer">
+      <h3>Навігація</h3>
+      <a href="#about">Про нас</a>
       <a href="#services">Послуги</a>
-      <a href="#about">Про клініку</a>
-      <a href="#team">Команда</a>
-      <a href="#reviews">Відгуки</a>
+      <a href="#cases">Кейси</a>
+      <a href="#certificates">Сертифікати</a>
+      <a href="price.html">Прайс</a>
       <a href="#contact">Контакти</a>
     </nav>
     <div class="footer-contact">
+      <h3>Контакти</h3>
       <a href="tel:+380983181262">+38 (098) 318-12-62</a>
+      <a href="tel:+380617875511">+38 (061) 787-55-11</a>
       <span>вул. Поштова, 161/36, Запоріжжя</span>
       <a href="https://instagram.com/status_dent_zp" target="_blank" rel="noopener">@status_dent_zp</a>
     </div>
+    <div class="footer-map">
+      <iframe title="Карта STATUS на Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=STATUS+стоматологія,+вул.+Поштова+161/36,+Запоріжжя&output=embed"></iframe>
+    </div>
   </div>
-  <div class="footer-base">
+  <div class="wrap footer-base">
     <span>© 2026 STATUS · Центр сучасної стоматології</span>
     <span>Лікування без болю · Повний цикл послуг</span>
   </div>
