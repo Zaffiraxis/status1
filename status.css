@@ -256,24 +256,6 @@ h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:1.06
 .info-block p{font-size:17px;color:rgba(255,255,255,.85);line-height:1.6}
 .info-block a:hover{color:var(--teal)}
 
-/* ===================== CASES ===================== */
-.cases{background:var(--charcoal)}
-.cases .sec-title{color:#fff}
-.cases .sec-lede{color:rgba(255,255,255,.62)}
-.cases .sec-kicker{color:var(--teal)}
-.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:56px}
-.case-wide{grid-column:span 2}
-.case-card{position:relative;display:grid;grid-template-columns:1fr 1fr;border-radius:6px;overflow:hidden;aspect-ratio:16/8}
-.case-wide.case-card{aspect-ratio:21/8}
-.case-half{position:relative;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#181f1d,#0a0c0b)}
-.case-half:first-child{border-right:1px solid rgba(255,255,255,.08)}
-.case-icon{width:20%;max-width:70px;color:var(--teal);opacity:.16}
-.case-tag{position:absolute;top:16px;left:16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);padding:6px 13px;border-radius:20px}
-.case-half:last-child .case-tag{left:auto;right:16px}
-.case-chip{position:absolute;left:18px;bottom:16px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.55);
-  backdrop-filter:blur(6px);color:#fff;padding:9px 18px;border-radius:20px;display:flex;align-items:center;gap:9px;z-index:2}
-.case-chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal);flex:none}
-
 /* ===================== CERTIFICATES ===================== */
 .cert-wrap{position:relative;margin-top:56px}
 .cert-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;padding:6px 4px 20px;scrollbar-width:none}
@@ -354,15 +336,14 @@ h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:1.06
   .nav-links{display:none}
   .nav-burger{display:flex}
   .nav-cta{display:none}
-  .case-wide{grid-column:span 1}
   .footer-top{grid-template-columns:1fr 1fr;gap:40px 32px}
   .footer-map{grid-column:1/-1}
 }
 @media(max-width:760px){
   .wrap{padding:0 22px}
   .section{padding:84px 0}
-  .svc-grid,.rev-grid,.case-grid{grid-template-columns:1fr}
-  .svc-wide,.case-wide{grid-column:span 1}
+  .svc-grid,.rev-grid{grid-template-columns:1fr}
+  .svc-wide{grid-column:span 1}
   .trust-grid{grid-template-columns:1fr 1fr}
   .contact-grid{grid-template-columns:1fr}
   .trust-item{border-right:none;padding:34px 0!important;border-bottom:1px solid var(--line)}
