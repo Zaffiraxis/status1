@@ -19,8 +19,10 @@
       <img src="status-logo.png" alt="STATUS — центр сучасної стоматології" class="brand-logo">
     </a>
     <nav class="nav-links" aria-label="Головна навігація">
-      <a href="index.html#about">Про нас</a>
+      <a href="index.html">Головна сторінка</a>
       <a href="index.html#services">Послуги</a>
+      <a href="index.html#about">Про клініку</a>
+      <a href="index.html#cases">Кейси</a>
       <a href="index.html#certificates">Сертифікати</a>
       <a href="price.html" aria-current="page">Прайс</a>
       <a href="index.html#contact">Контакти</a>
@@ -31,8 +33,10 @@
     </button>
   </div>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="index.html#about">Про нас</a>
+    <a href="index.html">Головна сторінка</a>
     <a href="index.html#services">Послуги</a>
+    <a href="index.html#about">Про клініку</a>
+    <a href="index.html#cases">Кейси</a>
     <a href="index.html#certificates">Сертифікати</a>
     <a href="price.html">Прайс</a>
     <a href="index.html#contact">Контакти</a>
@@ -156,13 +160,33 @@
     </div>
 
     <div class="price-cta reveal-up">
+      <span class="sec-kicker">Заявка</span>
       <h2 class="sec-title">Залишились питання щодо вартості?</h2>
-      <p class="sec-lede">Запишіться на консультацію — лікар огляне та складе індивідуальний план лікування з фіксованою ціною.</p>
-      <a href="index.html#contact" class="btn btn-fill">Записатися на консультацію</a>
+      <p class="sec-lede">Залиште заявку — адміністратор передзвонить і підбере зручний час, лікар складе індивідуальний план з фіксованою ціною.</p>
+      <form class="form price-form" id="price-form" novalidate>
+        <div class="field">
+          <label for="pf-name">Ім'я</label>
+          <input id="pf-name" name="name" type="text" placeholder="Ваше ім'я" required>
+        </div>
+        <div class="field">
+          <label for="pf-phone">Телефон</label>
+          <input id="pf-phone" name="phone" type="tel" placeholder="+38 (0__) ___-__-__" required>
+        </div>
+        <div class="field">
+          <label for="pf-note">Коментар / послуга</label>
+          <textarea id="pf-note" name="note" rows="3" placeholder="Що вас цікавить? (необов'язково)"></textarea>
+        </div>
+        <button type="submit" class="btn btn-fill btn-block">Відправити заявку</button>
+        <p class="form-note" id="price-form-note" hidden>Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+      </form>
     </div>
 
   </div>
 </section>
+
+<button class="to-top" id="to-top" aria-label="Повернутися наверх">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 
 </main>
 
@@ -178,8 +202,10 @@
     </div>
     <nav class="footer-links" aria-label="Footer">
       <h3>Навігація</h3>
-      <a href="index.html#about">Про нас</a>
+      <a href="index.html">Головна сторінка</a>
       <a href="index.html#services">Послуги</a>
+      <a href="index.html#about">Про клініку</a>
+      <a href="index.html#cases">Кейси</a>
       <a href="index.html#certificates">Сертифікати</a>
       <a href="price.html">Прайс</a>
       <a href="index.html#contact">Контакти</a>

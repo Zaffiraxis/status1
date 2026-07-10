@@ -50,15 +50,36 @@ requestAnimationFrame(() => requestAnimationFrame(() => {
   restart();
 })();
 
-// Certificates carousel — scroll by one card width per click
+// Certificates carousel — scroll by one card width per click, auto-advances,
+// pauses on manual interaction (touch/wheel/nav clicks)
 (() => {
   const track = document.getElementById('cert-track');
   const prev = document.getElementById('cert-prev');
   const next = document.getElementById('cert-next');
   if (!track || !prev || !next) return;
   const step = () => (track.querySelector('.cert-card')?.offsetWidth || 220) + 20;
-  prev.addEventListener('click', () => track.scrollBy({ left: -step() * 2, behavior: 'smooth' }));
-  next.addEventListener('click', () => track.scrollBy({ left: step() * 2, behavior: 'smooth' }));
+  const atEnd = () => track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+
+  let timer;
+  function autoAdvance() {
+    if (atEnd()) track.scrollTo({ left: 0, behavior: 'smooth' });
+    else track.scrollBy({ left: step(), behavior: 'smooth' });
+  }
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(autoAdvance, 3200);
+  }
+  function pauseAuto() {
+    clearInterval(timer);
+    clearTimeout(pauseAuto._resume);
+    pauseAuto._resume = setTimeout(startAuto, 6000);
+  }
+
+  prev.addEventListener('click', () => { track.scrollBy({ left: -step() * 2, behavior: 'smooth' }); pauseAuto(); });
+  next.addEventListener('click', () => { track.scrollBy({ left: step() * 2, behavior: 'smooth' }); pauseAuto(); });
+  track.addEventListener('touchstart', pauseAuto, { passive: true });
+  track.addEventListener('wheel', pauseAuto, { passive: true });
+  startAuto();
 })();
 
 // Mobile menu
@@ -75,23 +96,36 @@ mobile.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
   burger.setAttribute('aria-expanded', 'false');
 }));
 
-// Appointment form (only present on index.html)
-const form = document.getElementById('appt-form');
-const note = document.getElementById('form-note');
-if (form) form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = form.name.value.trim();
-  const phone = form.phone.value.trim();
-  if (!name || !phone) {
-    [form.name, form.phone].forEach((f) => {
-      if (!f.value.trim()) {
-        f.style.borderColor = '#ffd1d1';
-        f.addEventListener('input', () => { f.style.borderColor = ''; }, { once: true });
-      }
-    });
-    return;
-  }
-  note.hidden = false;
-  form.querySelector('button[type="submit"]').textContent = 'Заявку надіслано ✓';
-  setTimeout(() => { form.reset(); }, 300);
-});
+// Appointment forms — appt-form on index.html, price-form on price.html
+function wireLeadForm(formEl, noteEl) {
+  if (!formEl) return;
+  formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = formEl.name.value.trim();
+    const phone = formEl.phone.value.trim();
+    if (!name || !phone) {
+      [formEl.name, formEl.phone].forEach((f) => {
+        if (!f.value.trim()) {
+          f.style.borderColor = '#ffd1d1';
+          f.addEventListener('input', () => { f.style.borderColor = ''; }, { once: true });
+        }
+      });
+      return;
+    }
+    noteEl.hidden = false;
+    formEl.querySelector('button[type="submit"]').textContent = 'Заявку надіслано ✓';
+    setTimeout(() => { formEl.reset(); }, 300);
+  });
+}
+wireLeadForm(document.getElementById('appt-form'), document.getElementById('form-note'));
+wireLeadForm(document.getElementById('price-form'), document.getElementById('price-form-note'));
+
+// Back-to-top button (price.html)
+(() => {
+  const btn = document.getElementById('to-top');
+  if (!btn) return;
+  const onScroll = () => btn.classList.toggle('show', window.scrollY > 500);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
