@@ -120,6 +120,22 @@ function wireLeadForm(formEl, noteEl) {
 wireLeadForm(document.getElementById('appt-form'), document.getElementById('form-note'));
 wireLeadForm(document.getElementById('price-form'), document.getElementById('price-form-note'));
 
+// Scroll-spy — highlight the nav link for the section currently in view
+(() => {
+  const sections = Array.from(document.querySelectorAll('main > section[id]'));
+  const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"], .nav-mobile a[href^="#"]'));
+  if (!sections.length || !navLinks.length) return;
+  const linkFor = (id) => navLinks.filter((a) => a.getAttribute('href') === `#${id}`);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach((a) => a.classList.remove('active'));
+      linkFor(entry.target.id).forEach((a) => a.classList.add('active'));
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+  sections.forEach((s) => observer.observe(s));
+})();
+
 // Back-to-top button (price.html)
 (() => {
   const btn = document.getElementById('to-top');
