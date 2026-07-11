@@ -70,7 +70,7 @@ function wireCertRow(track, direction) {
   }
   function startAuto() {
     clearInterval(timer);
-    timer = setInterval(autoAdvance, 3200);
+    timer = setInterval(autoAdvance, 2300);
   }
   function pauseAuto() {
     clearInterval(timer);
@@ -109,10 +109,10 @@ wireCertRow(document.getElementById('cert-track-2'), -1);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 })();
 
-// Cases ribbon — CSS-driven marquee; pause on touch since :hover doesn't fire there
-(() => {
-  const ribbon = document.getElementById('case-ribbon');
-  const track = document.getElementById('case-track');
+// Cases ribbons — CSS-driven marquee; pause on touch since :hover doesn't fire there
+function wireCaseRibbon(ribbonId, trackId) {
+  const ribbon = document.getElementById(ribbonId);
+  const track = document.getElementById(trackId);
   if (!ribbon || !track) return;
   let resumeTimer;
   const pause = () => {
@@ -121,7 +121,9 @@ wireCertRow(document.getElementById('cert-track-2'), -1);
     resumeTimer = setTimeout(() => track.classList.remove('paused'), 4000);
   };
   ribbon.addEventListener('touchstart', pause, { passive: true });
-})();
+}
+wireCaseRibbon('case-ribbon-1', 'case-track-1');
+wireCaseRibbon('case-ribbon-2', 'case-track-2');
 
 // Mobile menu
 const burger = document.getElementById('nav-burger');
