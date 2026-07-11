@@ -386,22 +386,22 @@ h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:1.06
 }
 
 /* ===================== FOOTER ===================== */
-.footer{background:#0d0f0e;color:rgba(255,255,255,.6);padding-top:44px;border-top:1px solid rgba(255,255,255,.08)}
-.footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer{background:var(--grey-2);color:var(--ink-soft);padding-top:44px;border-top:1px solid var(--line)}
+.footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid var(--line)}
 .footer-brand-col{display:flex;flex-direction:column;gap:16px;max-width:280px}
-.footer-tagline{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.45)}
+.footer-tagline{font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
 .footer-contact{display:flex;flex-wrap:wrap;gap:26px 40px}
-.footer-contact-item{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.65)}
-.footer-contact-item svg{flex:none;width:17px;height:17px;margin-top:2px;color:var(--teal)}
-.footer-contact-item a:hover{color:var(--teal)}
+.footer-contact-item{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;line-height:1.5;color:var(--charcoal)}
+.footer-contact-item svg{flex:none;width:17px;height:17px;margin-top:2px;color:var(--teal-dark)}
+.footer-contact-item a:hover{color:var(--teal-dark)}
 .footer-mini{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:22px 0}
 .brand-foot .brand-sub{color:var(--silver-dark)}
-.brand-foot .brand-logo-chip{padding:8px 12px}
+.brand-foot .brand-logo-chip{padding:8px 12px;border:1px solid var(--line)}
 .brand-foot .brand-logo-chip img{height:26px}
 .footer-links{display:flex;flex-wrap:wrap;gap:6px 18px}
-.footer-links a{font-size:13.5px;font-weight:500;color:rgba(255,255,255,.65)}
-.footer-links a:hover{color:var(--teal)}
-.footer-copy{font-size:12.5px;color:rgba(255,255,255,.4);white-space:nowrap}
+.footer-links a{font-size:13.5px;font-weight:500;color:var(--ink-soft)}
+.footer-links a:hover{color:var(--teal-dark)}
+.footer-copy{font-size:12.5px;color:var(--silver-dark);white-space:nowrap}
 
 @media(max-width:760px){
   .footer{padding-top:32px}
