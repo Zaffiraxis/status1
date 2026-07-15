@@ -214,12 +214,12 @@ h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:1.06
 .team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px;margin-top:64px;max-width:840px;margin-left:auto;margin-right:auto}
 .doc{text-align:center}
 .doc-ring{
-  width:200px;height:200px;margin:0 auto 22px;border-radius:8px;padding:7px;
+  width:200px;height:260px;margin:0 auto 22px;border-radius:8px;padding:7px;
   background:#fff;border:1.5px solid var(--teal);box-shadow:0 0 0 7px var(--teal-tint);
   transition:transform .35s var(--ease),box-shadow .35s var(--ease);
 }
 .doc:hover .doc-ring{transform:translateY(-6px);box-shadow:0 0 0 7px rgba(42,173,168,.16),var(--shadow-lift)}
-.doc-avatar{width:100%;height:100%;border-radius:4px;object-fit:cover;display:block}
+.doc-avatar{width:100%;height:100%;border-radius:4px;object-fit:contain;background:var(--grey-2);display:block;cursor:zoom-in}
 .doc h3{font-size:25px;margin-bottom:2px}
 .doc-role{font-size:14px;color:var(--teal-dark);letter-spacing:.04em;text-transform:uppercase;font-weight:500}
 
@@ -459,7 +459,7 @@ h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:1.06
   .section{padding:84px 0}
   .svc-grid,.rev-grid,.case-grid,.team-grid{grid-template-columns:1fr}
   .svc-wide,.case-wide{grid-column:span 1}
-  .doc-ring{width:170px;height:170px}
+  .doc-ring{width:170px;height:222px}
   .trust-grid{grid-template-columns:1fr 1fr}
   .trust-item{border-right:none;padding:14px 0!important;border-bottom:1px solid var(--line)}
   .trust-item:nth-child(odd){padding-right:14px!important}

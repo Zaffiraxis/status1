@@ -101,7 +101,7 @@ wireCertRow(document.getElementById('cert-track-2'), -1);
     modal.classList.remove('open');
     modalImg.src = '';
   }
-  document.querySelectorAll('.cert-card img').forEach((img) => {
+  document.querySelectorAll('.cert-card img, .doc-avatar').forEach((img) => {
     img.addEventListener('click', () => open(img.src, img.alt));
   });
   closeBtn.addEventListener('click', close);
